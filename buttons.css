@@ -1,0 +1,22 @@
+:root {
+  --main-font: "Monserrat", sans-serif;
+  --second-font: "Libre Baskerville", serif;
+  --primary-color: #333333;
+  --strong-color: ;
+  --special-color: #0083d3;
+  --strong-color: #dd71c6;
+}
+
+.pink-btn {
+  background-color: var(--strong-color);
+  width: 13.375rem;
+  height: 2.5rem;
+  opacity: 1;
+  border: none;
+  font-family: var(--main-font);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 100%;
+  text-align: center;
+  color: white;
+}
