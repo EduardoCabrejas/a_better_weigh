@@ -8,6 +8,7 @@ burgerMenu.addEventListener("click", () => {
   burgerMenu.setAttribute("aria-expanded", !expanded);
 
   links.classList.toggle("show");
+  burgerMenu.classList.toggle("show");
 });
 
 const endDate = new Date("2025-09-30T23:59:59").getTime();
@@ -49,10 +50,10 @@ const timer = setInterval(updateCountdown, 1000);
 function moveContent() {
   const timeContainer = document.querySelector(".time-container");
   const toggleP = document.querySelector("#toggle-p");
-  const hgroup = document.querySelector(".content-column hgroup");
+  const header = document.querySelector("header");
 
   if (window.innerWidth <= 1024) {
-    hgroup.insertBefore(timeContainer, toggleP.nextSibling);
+    header.insertBefore(timeContainer, toggleP.nextSibling);
   } else {
     document.querySelector(".home-grid").appendChild(timeContainer);
   }

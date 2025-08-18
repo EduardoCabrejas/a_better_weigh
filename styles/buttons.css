@@ -18,5 +18,20 @@
   font-size: 1rem;
   line-height: 100%;
   text-align: center;
-  color: white;
+  color: #f9f9f9f9;
+  transition: transform ease-in-out 300ms;
+}
+
+.pink-btn:hover {
+  transform: scale(1.1);
+}
+
+#yellow-btn {
+  background-color: #ffd900;
+}
+
+@media (max-width: 1024px) {
+  .pink-btn {
+    margin: auto;
+  }
 }

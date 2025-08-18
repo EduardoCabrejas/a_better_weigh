@@ -1,0 +1,133 @@
+.details-img {
+  width: 28.75rem;
+  height: 36.5rem;
+}
+
+.elipse-r {
+  position: absolute;
+  width: 27.25rem;
+  height: 27.25rem;
+  opacity: 0.15;
+  top: 15%;
+  left: 85%;
+  z-index: 1;
+  border: 1.5rem solid #ffffff;
+  border-radius: 100%;
+}
+
+.elipse-r-sm {
+  display: none;
+  position: absolute;
+  width: 11.25rem;
+  height: 11.25rem;
+  opacity: 0.15;
+  top: 55%;
+  left: 65%;
+  z-index: 1;
+  border: 1.5rem solid #ffffff;
+  border-radius: 100%;
+}
+
+#elipse-r-review {
+  display: block;
+  width: 19.25rem;
+  height: 19.25rem;
+  top: 10%;
+  left: 95%;
+}
+
+#elipse-l-review {
+  display: block;
+  width: 11.25rem;
+  height: 11.25rem;
+  top: 30%;
+  left: 3%;
+}
+
+.logo {
+  width: 8.625rem;
+  height: 3.875rem;
+}
+
+.review-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .details-img {
+    width: 27.5rem;
+    height: 30.875rem;
+  }
+
+  .elipse {
+    position: absolute;
+    z-index: 0;
+  }
+
+  #elipse-r-review {
+    width: 11.25rem;
+    height: 11.25rem;
+    top: 45%;
+    left: 75%;
+  }
+
+  #elipse-r-details {
+    width: 25.875rem;
+    height: 25.875rem;
+    top: 20%;
+    left: 75%;
+  }
+
+  #elipse-l-details {
+    width: 25.875rem;
+    height: 25.875rem;
+    top: 45%;
+    left: -25%;
+  }
+
+  .elipse-r {
+    top: 2%;
+    left: 70%;
+  }
+
+  .elipse-r-sm {
+    display: block;
+  }
+
+  .review-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-img {
+    height: 24rem;
+    width: 20.125rem;
+  }
+
+  #elipse-r-review {
+    width: 13.125rem;
+    height: 13.125rem;
+    top: 20%;
+    left: 80%;
+  }
+
+  #elipse-l-review {
+    width: 7.75rem;
+    height: 7.75rem;
+    display: block;
+    top: 50%;
+    left: -18%;
+  }
+
+  .elipse {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .elipse-r-sm {
+    display: none;
+  }
+}

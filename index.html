@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/img/logo.png" />
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/buttons.css" />
+    <link rel="stylesheet" href="./styles/buttons.css" />
+    <link rel="stylesheet" href="./styles/images.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,57 +18,51 @@
   <body>
     <main>
       <section class="home-section">
-        <header>
-          <nav>
-            <img
-              src="/img/logo.png"
-              alt="Logo"
-              aria-label="Logo"
-              class="logo"
-            />
-            <ul class="nav-links" id="nav-links">
-              <li><a href="">About Us</a></li>
-              <li><a href="">Book Online</a></li>
-              <li><a href="">Weight Loss Programs</a></li>
-              <li><a href="">Real Patient Stories</a></li>
-              <li><a href="">Locations</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Shop</a></li>
-              <li><a href="">Subscription</a></li>
-            </ul>
-            <div
-              class="burger-menu"
-              id="burger-menu"
-              aria-label="Menú principal"
-              aria-expanded="false"
-              aria-controls="nav-links"
+        <nav>
+          <img src="/img/logo.png" alt="Logo" aria-label="Logo" class="logo" />
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Book Online</a></li>
+            <li><a href="#">Weight Loss Programs</a></li>
+            <li><a href="#">Real Patient Stories</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Subscription</a></li>
+          </ul>
+          <div
+            class="burger-menu"
+            id="burger-menu"
+            aria-label="Principal Menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <svg
+              width="25"
+              height="18"
+              viewBox="0 0 25 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                width="25"
-                height="18"
-                viewBox="0 0 25 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="top"
-                  d="M24.0234 7.8125H0.976562C0.437207 7.8125 0 8.24971 0 8.78906C0 9.32842 0.437207 9.76562 0.976562 9.76562H24.0234C24.5628 9.76562 25 9.32842 25 8.78906C25 8.24971 24.5628 7.8125 24.0234 7.8125Z"
-                  fill="#DD71C6"
-                />
-                <path
-                  class="middle"
-                  d="M24.0234 0H0.976562C0.437207 0 0 0.437207 0 0.976562C0 1.51592 0.437207 1.95312 0.976562 1.95312H24.0234C24.5628 1.95312 25 1.51592 25 0.976562C25 0.437207 24.5628 0 24.0234 0Z"
-                  fill="#DD71C6"
-                />
-                <path
-                  class="bottom"
-                  d="M24.0234 15.625H0.976562C0.437207 15.625 0 16.0622 0 16.6016C0 17.1409 0.437207 17.5781 0.976562 17.5781H24.0234C24.5628 17.5781 25 17.1409 25 16.6016C25 16.0622 24.5628 15.625 24.0234 15.625Z"
-                  fill="#DD71C6"
-                />
-              </svg>
-            </div>
-          </nav>
-        </header>
+              <path
+                class="top"
+                d="M24.0234 7.8125H0.976562C0.437207 7.8125 0 8.24971 0 8.78906C0 9.32842 0.437207 9.76562 0.976562 9.76562H24.0234C24.5628 9.76562 25 9.32842 25 8.78906C25 8.24971 24.5628 7.8125 24.0234 7.8125Z"
+                fill="#DD71C6"
+              />
+              <path
+                class="middle"
+                d="M24.0234 0H0.976562C0.437207 0 0 0.437207 0 0.976562C0 1.51592 0.437207 1.95312 0.976562 1.95312H24.0234C24.5628 1.95312 25 1.51592 25 0.976562C25 0.437207 24.5628 0 24.0234 0Z"
+                fill="#DD71C6"
+              />
+              <path
+                class="bottom"
+                d="M24.0234 15.625H0.976562C0.437207 15.625 0 16.0622 0 16.6016C0 17.1409 0.437207 17.5781 0.976562 17.5781H24.0234C24.5628 17.5781 25 17.1409 25 16.6016C25 16.0622 24.5628 15.625 24.0234 15.625Z"
+                fill="#DD71C6"
+              />
+            </svg>
+          </div>
+        </nav>
+
         <div class="bg-grid">
           <div class="bg-left"></div>
           <div class="bg-right"></div>
@@ -84,10 +79,9 @@
             class="elipse-r-sm"
           />
         </div>
-        <div class="home-content">
+        <article class="home-content">
           <div class="home-grid">
-            <div class="content-column">
-              <hgroup class="home-verse">
+              <header class="home-verse">
                 <h1 class="title">
                   Chicago&apos;s <strong>Free</strong> Medical Check-Up and
                   Weight<br id="toggle-br" />
@@ -101,35 +95,217 @@
                     >There are limited
                   </span>
                   <span id="replaced-text">Limited spots available</span> due to
-                  the Physicians schedule and the high demand for service. No
-                  credit card or insurance required.
+                  the Physicians <br id="toggle-br" />
+                  schedule and the high demand for service. No credit card or
+                  insurance required.
                 </p>
-              </hgroup>
+              </header>
+            </div>
+            <button class="pink-btn">Book my appointment</button>
 
-              <button class="pink-btn">Book my appointment</button>
-            </div>
-            <div class="time-container">
+            <aside class="time-container">
               <p class="xs-text">Your offer ends in:</p>
-              <div class="time-card">
+              <dl class="time-card">
                 <div class="card-content">
-                  <p class="special-text">DAYS</p>
-                  <p class="countdown-number" id="days-box">00</p>
+                  <dt class="special-text">DAYS</dt>
+                  <dd class="countdown-numbers" id="days-box">00</dd>
                 </div>
                 <div class="card-content">
-                  <p class="special-text">HOURS</p>
-                  <p class="countdown-number" id="hours">00</p>
+                  <dt class="special-text">HOURS</dt>
+                  <dd class="countdown-numbers" id="hours">00</dd>
                 </div>
                 <div class="card-content">
-                  <p class="special-text">MINUTES</p>
-                  <p class="countdown-number" id="minutes">00</p>
+                  <dt class="special-text">MINUTES</dt>
+                  <dd class="countdown-numbers" id="minutes">00</dd>
                 </div>
                 <div class="card-content">
-                  <p class="special-text">SECONDS</p>
-                  <p class="countdown-number" id="seconds">00</p>
+                  <dt class="special-text">SECONDS</dt>
+                  <dd class="countdown-numbers" id="seconds">00</dd>
                 </div>
-              </div>
-            </div>
+              </dl>
+            </aside>
           </div>
+        </article>
+      </section>
+
+      <section class="review-section">
+        <img
+          src="/img/elipse.png"
+          alt="Elipse"
+          aria-label="Background Elipse"
+          class="elipse-r"
+          id="elipse-r-review"
+        />
+        <img
+          src="/img/elipse.png"
+          alt="Elipse"
+          aria-label="Background Elipse"
+          class="elipse-r-sm"
+          id="elipse-l-review"
+        />
+        <div class="review-container">
+          <div class="review-content">
+            <div class="review-top">
+              <svg
+                class="review-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
+                  stroke="#73C3F4"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21"
+                  stroke="#73C3F4"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p class="bold-text">
+                10 <strong class="review-strong">+</strong>
+              </p>
+            </div>
+            <p class="review-text">years in bussiness</p>
+          </div>
+          <div class="review-content">
+            <div class="review-top">
+              <svg
+                class="review-icon"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22.5C17.5228 22.5 22 18.0228 22 12.5C22 6.97715 17.5228 2.5 12 2.5C6.47715 2.5 2 6.97715 2 12.5C2 18.0228 6.47715 22.5 12 22.5Z"
+                  stroke="#FFCF54"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 14.5C8 14.5 9.5 16.5 12 16.5C14.5 16.5 16 14.5 16 14.5"
+                  stroke="#FFCF54"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 9.5H9.01003"
+                  stroke="#FFCF54"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15 9.5H15.01"
+                  stroke="#FFCF54"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p class="bold-text">
+                2000 <strong class="review-strong">+</strong>
+              </p>
+            </div>
+            <p class="review-text">positive reviews</p>
+          </div>
+          <div class="review-content">
+            <div class="review-top">
+              <svg
+                class="review-icon"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 12C21.0034 13.3199 20.6951 14.6219 20.1 15.8C19.3944 17.2118 18.3098 18.3992 16.9674 19.2293C15.6251 20.0594 14.0782 20.4994 12.5 20.5C11.1801 20.5035 9.87812 20.1951 8.7 19.6L3 21.5L4.9 15.8C4.30493 14.6219 3.99656 13.3199 4 12C4.00061 10.4218 4.44061 8.87488 5.27072 7.53258C6.10083 6.19028 7.28825 5.1056 8.7 4.40003C9.87812 3.80496 11.1801 3.49659 12.5 3.50003H13C15.0843 3.61502 17.053 4.49479 18.5291 5.97089C20.0052 7.44699 20.885 9.41568 21 11.5V12Z"
+                  stroke="#DD71C6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p class="bold-text">
+                15000 <strong class="review-strong">+</strong>
+              </p>
+            </div>
+            <p class="review-text">satisfied clients</p>
+          </div>
+          <div class="review-content">
+            <div class="review-top">
+              <svg
+                class="review-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 12H18L15 21L9 3L6 12H2"
+                  stroke="#55A201"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p class="bold-text">
+                Many <strong class="review-strong">+</strong>
+              </p>
+            </div>
+            <p class="review-text">nurses and physician assistants on staff</p>
+          </div>
+        </div>
+        <button class="pink-btn" id="yellow-btn">Book my appointment</button>
+      </section>
+
+      <section class="details-section">
+        <img
+          src="/img/elipse.png"
+          alt="Elipse"
+          aria-label="Background Elipse"
+          class="elipse-r"
+          id="elipse-r-details"
+        />
+        <img
+          src="/img/elipse.png"
+          alt="Elipse"
+          aria-label="Background Elipse"
+          class="elipse-r-sm"
+          id="elipse-l-details"
+        />
+        <div class="details-content">
+          <hgroup class="details-verse">
+            <h1 class="details-title">Who Is The Consultation For?</h1>
+            <p class="details-text">
+              Chicago&apos;s free medical check-up and weight loss consultation
+              is for Chicago residents who are looking to lose weight so they
+              can live a long, vibrant and healthy life, while looking good and
+              not breaking the bank.
+            </p>
+            <h1 class="details-title">How Does It Work?</h1>
+            <p class="details-text">
+              In this exam a certified nurse or physician will do various tests
+              to check your overall health level and find which easy-to-do
+              physician-supervised weight loss program will work best for you.
+            </p>
+
+            <button class="pink-btn">Book my appointment</button>
+          </hgroup>
+          <img
+            class="details-img"
+            src="./img/details-overflow.png"
+            alt="Improve working!"
+            aria-label="Improve working!"
+          />
         </div>
       </section>
     </main>
