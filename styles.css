@@ -80,7 +80,7 @@ strong {
 .home-section {
   position: relative;
   width: 100%;
-  min-height: 47.5rem;
+  min-height: 40rem;
 }
 
 .details-section {
@@ -105,19 +105,20 @@ strong {
 }
 
 .home-content {
-  max-width: 80dvw;
+  max-width: 80%;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin: auto;
 }
 
 .home-grid {
-  max-width: 80dvw;
   display: grid;
   grid-template-columns: 45% 55%;
-  margin: 3rem 8rem 5rem 8rem;
+  margin: 3rem 0;
+  gap: 1rem;
 }
 
 .bg-grid {
@@ -378,6 +379,7 @@ strong {
   .home-section {
     z-index: 5;
     margin-bottom: 5rem;
+    min-height: 47.5rem;
   }
 
   .home-verse {
@@ -443,6 +445,8 @@ strong {
   }
 
   .burger-menu.show {
+    left: 75%;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,7 +455,7 @@ strong {
     height: 3rem;
     width: 3em;
     padding: 0.5rem;
-    transform: translateX(3rem);
+    transform: translateX(4rem);
   }
 
   .burger-menu path {
@@ -580,7 +584,8 @@ strong {
   }
 
   .burger-menu.show {
-    transform: translateX(3rem);
+    left: 40%;
+    transform: translateX(2rem);
   }
 
   .bg-grid {
