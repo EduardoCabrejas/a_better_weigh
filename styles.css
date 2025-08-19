@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #ffffff;
+}
+
 nav {
   padding: 1rem;
   position: relative;
@@ -77,6 +81,16 @@ strong {
   padding: 3rem 0;
 }
 
+.help-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 8rem;
+  gap: 2rem;
+  width: 100%;
+}
+
 .home-section {
   position: relative;
   width: 100%;
@@ -110,7 +124,7 @@ strong {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: auto;
 }
 
@@ -227,6 +241,30 @@ strong {
   color: #ffffff;
 }
 
+.help-redact {
+  display: block;
+}
+
+.help-redact p {
+  display: inline;
+  margin: 0;
+}
+
+#help-text-resp::before {
+  content: " ";
+}
+
+.help-verse {
+  width: 100%;
+  max-width: 71.25rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
 .home-verse {
   margin-bottom: 1.5rem;
 }
@@ -333,6 +371,13 @@ strong {
     z-index: 10;
   }
 
+  .help-redact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
   .review-strong {
     font-size: 1.25rem;
   }
@@ -365,6 +410,7 @@ strong {
   }
 
   .home-content {
+    align-items: flex-start;
     position: relative;
     z-index: 1;
     padding: 2rem 0;
@@ -505,6 +551,19 @@ strong {
     gap: 2rem;
   }
 
+  .help-verse {
+    max-width: 100dvw;
+    text-align: start;
+  }
+
+  .help-verse h1 {
+    margin-right: 3rem;
+  }
+
+  .help-verse p {
+    max-width: 27.5rem;
+  }
+
   .time-container {
     align-items: center;
     justify-content: center;
@@ -524,9 +583,6 @@ strong {
 
   .title {
     max-width: 35rem;
-  }
-
-  .title {
     text-align: start;
   }
 
@@ -561,6 +617,15 @@ strong {
     width: 100%;
     justify-content: space-around;
     padding: 0;
+  }
+
+  .help-section {
+    padding: 2rem 0rem;
+  }
+
+  .help-verse p,
+  .help-verse h1 {
+    padding: 0 2rem;
   }
 
   .nav-links li {
@@ -607,7 +672,6 @@ strong {
   .home-content {
     max-width: 100dvw;
     display: flex;
-    align-items: center;
     flex-direction: column;
     position: absolute;
     z-index: 1;
@@ -626,7 +690,7 @@ strong {
   .special-text,
   .xs-text,
   .title {
-    width: 100%;
+    max-width: 100%;
   }
 
   .base-text {
@@ -682,7 +746,7 @@ strong {
   }
 
   .title {
-    font-size: 1.95rem;
+    font-size: 1.875rem;
     line-height: 160%;
     text-align: center;
   }

@@ -51,11 +51,32 @@ function moveContent() {
   const timeContainer = document.querySelector(".time-container");
   const toggleP = document.querySelector("#toggle-p");
   const header = document.querySelector("header");
+  const imgResponsive = document.querySelector(".help-img-resp");
+  const helpRedact = document.querySelector(".help-redact");
+  const helpTextResp = document.querySelector("#help-text-resp");
+  const helpSection = document.querySelector(".help-section");
 
   if (window.innerWidth <= 1024) {
     header.insertBefore(timeContainer, toggleP.nextSibling);
+    if (
+      imgResponsive &&
+      helpRedact &&
+      helpTextResp &&
+      helpTextResp.parentNode === helpRedact
+    ) {
+      const ref = helpTextResp.nextElementSibling || null;
+      helpRedact.insertBefore(imgResponsive, ref);
+    } else if (imgResponsive && helpRedact) {
+      helpRedact.appendChild(imgResponsive);
+    }
   } else {
-    document.querySelector(".home-grid").appendChild(timeContainer);
+    if (imgResponsive && helpSection) {
+      helpSection.appendChild(imgResponsive);
+    }
+    const homeGrid = document.querySelector(".home-grid");
+    if (homeGrid && timeContainer) {
+      homeGrid.appendChild(timeContainer);
+    }
   }
 }
 

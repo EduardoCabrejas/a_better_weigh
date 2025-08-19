@@ -44,6 +44,16 @@
   left: 3%;
 }
 
+.help-img-desk {
+  display: block;
+  width: 65.625rem;
+  height: 20.875rem;
+}
+
+.help-img-resp {
+  display: none;
+}
+
 .logo {
   width: 8.625rem;
   height: 3.875rem;
@@ -55,6 +65,16 @@
 }
 
 @media (max-width: 1024px) {
+  .help-img-desk {
+    display: none;
+  }
+
+  .help-img-resp {
+    display: block;
+    width: 51.25rem;
+    height: 34rem;
+  }
+
   .details-img {
     width: 27.5rem;
     height: 30.875rem;
@@ -105,6 +125,11 @@
   .details-img {
     height: 24rem;
     width: 20.125rem;
+  }
+
+  .help-img-resp {
+    width: 100%;
+    height: 15.625rem;
   }
 
   #elipse-r-review {
