@@ -37,6 +37,7 @@ strong {
 
 .bold-text,
 .base-text,
+.list-text,
 .details-text,
 .review-text,
 .xs-text,
@@ -135,6 +136,46 @@ strong {
   gap: 1rem;
 }
 
+.get-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 5rem;
+}
+
+.get-content {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.get-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+}
+
+.get-list li {
+  margin-bottom: 1.25rem;
+}
+
+.underline-lb,
+.underline-pk {
+  width: 100%;
+}
+
+.underline-lb {
+  border: 1px solid #b1e2ff;
+  margin-top: 2rem;
+}
+
+.underline-pk {
+  border: 1px solid #ffb7f0;
+  margin-top: 2rem;
+}
+
 .bg-grid {
   position: absolute;
   top: 0;
@@ -175,6 +216,16 @@ strong {
 
 #countdown-days {
   display: none;
+}
+
+.get-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  width: 80%;
+  margin: auto;
+  gap: 3rem;
 }
 
 .nav-links {
@@ -227,6 +278,7 @@ strong {
 
 .base-text,
 .details-text,
+.list-text,
 .review-text,
 .xs-text {
   color: var(--primary-color);
@@ -354,6 +406,21 @@ strong {
   letter-spacing: 0%;
 }
 
+.sub-title-lb,
+.sub-title-pk {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 173%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--special-color);
+}
+
+.sub-title-pk {
+  color: var(--strong-color);
+}
+
 .details-title {
   color: #ffffff;
 }
@@ -420,6 +487,22 @@ strong {
     display: flex;
     flex-direction: column;
     margin: 1rem 5rem;
+  }
+
+  .get-section {
+    max-width: 100%;
+  }
+
+  .get-grid {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 27.5rem;
+  }
+
+  .get-content {
+    width: 17.125rem;
   }
 
   .home-section {
@@ -574,11 +657,15 @@ strong {
   }
 
   .base-text {
-    max-width: 26.5rem;
+    max-width: 32rem;
   }
 
   .details-text {
     font-size: 1rem;
+  }
+
+  .list-text {
+    font-size: 0.875rem;
   }
 
   .title {
@@ -617,6 +704,26 @@ strong {
     width: 100%;
     justify-content: space-around;
     padding: 0;
+  }
+
+  .get-section {
+    width: 85%;
+    padding: 2rem 2rem;
+    margin-top: 3rem;
+  }
+
+  .get-grid {
+    gap: 6rem;
+  }
+
+  .get-content {
+    max-width: 17.5rem;
+    max-height: 18.375rem;
+  }
+
+  .underline-lb,
+  .underline-pk {
+    margin-bottom: 2rem;
   }
 
   .help-section {
@@ -682,18 +789,20 @@ strong {
     gap: 0.5rem;
   }
 
-  .bold-text {
+  .bold-text,
+  .sub-title {
     font-size: 1.125rem;
   }
 
   .base-text,
-  .special-text,
+  .list-text .special-text,
   .xs-text,
   .title {
     max-width: 100%;
   }
 
-  .base-text {
+  .base-text,
+  .list-text {
     font-size: 1rem;
   }
 
@@ -749,5 +858,10 @@ strong {
     font-size: 1.875rem;
     line-height: 160%;
     text-align: center;
+  }
+
+  #get-title {
+    font-size: 1.5rem;
+    text-align: start;
   }
 }
