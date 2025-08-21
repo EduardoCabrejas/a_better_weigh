@@ -82,3 +82,35 @@ function moveContent() {
 
 window.addEventListener("resize", moveContent);
 window.addEventListener("DOMContentLoaded", moveContent);
+
+const faqGroups = document.querySelectorAll(".faq-group");
+faqGroups.forEach((group) => {
+  const chevron = group.querySelector(".chevron-down");
+  const content = group.querySelector("p");
+
+  content.style.display = "none";
+
+  chevron.addEventListener("click", () => {
+    chevron.classList.toggle("open");
+
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      const isOpen = chevron.classList.contains("open");
+      // O si lo pones en el h1:
+      title.setAttribute("aria-expanded", isOpen);
+    } else {
+      content.style.display = "none";
+    }
+  });
+
+  const title = group.querySelector("h1");
+  title.addEventListener("click", () => {
+    chevron.classList.toggle("open");
+
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+});

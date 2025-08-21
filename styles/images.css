@@ -1,3 +1,13 @@
+.chevron-down {
+  transition: transform ease-in-out 300ms;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chevron-down.open {
+  transform: rotate(180deg);
+}
+
 .details-img {
   width: 28.75rem;
   height: 36.5rem;
