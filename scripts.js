@@ -55,9 +55,25 @@ function moveContent() {
   const helpRedact = document.querySelector(".help-redact");
   const helpTextResp = document.querySelector("#help-text-resp");
   const helpSection = document.querySelector(".help-section");
+  const socialIcons = document.querySelector("#footer-social-icons");
+  const copyrightP = document.querySelector("#footer-copyright");
+  const footerColR = document.querySelector(".footer-col-r");
+  const footerTitleL = document.querySelector("#footer-title-l");
+  const footerTitleR = document.querySelector("#footer-title-r");
+  const footerListL = document.querySelector("#footer-list-l");
+  const footerListR = document.querySelector("#footer-list-r");
+  const footerListsContainer = document.querySelector(
+    ".footer-lists-container"
+  );
+  const footerHgroup = document.querySelector(".footer-col-r hgroup");
+  if (window.innerWidth <= 768) {
+    // MOBILE: Reorganize footer titles and lists vertically
 
-  if (window.innerWidth <= 1024) {
-    header.insertBefore(timeContainer, toggleP.nextSibling);
+    // Move existing content
+    if (header && timeContainer && toggleP) {
+      header.insertBefore(timeContainer, toggleP.nextSibling);
+    }
+
     if (
       imgResponsive &&
       helpRedact &&
@@ -69,13 +85,158 @@ function moveContent() {
     } else if (imgResponsive && helpRedact) {
       helpRedact.appendChild(imgResponsive);
     }
+
+    // Reorganize footer titles and lists
+    if (
+      footerTitleL &&
+      footerTitleR &&
+      footerListL &&
+      footerListR &&
+      footerListsContainer
+    ) {
+      // Check if already reorganized
+      if (!document.querySelector(".footer-mobile-col-l")) {
+        // Create mobile column containers
+        const mobileColL = document.createElement("div");
+        mobileColL.className = "footer-mobile-col-l";
+        const mobileColR = document.createElement("div");
+        mobileColR.className = "footer-mobile-col-r";
+
+        // Move title-l and list-l to first mobile column
+        mobileColL.appendChild(footerTitleL);
+        mobileColL.appendChild(footerListL);
+
+        // Move title-r and list-r to second mobile column
+        mobileColR.appendChild(footerTitleR);
+        mobileColR.appendChild(footerListR);
+
+        // Clear existing containers and add mobile columns
+        footerHgroup.style.display = "none";
+        footerListsContainer.innerHTML = "";
+        footerListsContainer.appendChild(mobileColL);
+        footerListsContainer.appendChild(mobileColR);
+      }
+    }
+
+    // Handle social icons + copyright
+    if (socialIcons && copyrightP && footerColR) {
+      let footerBottomContainer = document.querySelector(
+        ".footer-bottom-container"
+      );
+      if (!footerBottomContainer) {
+        footerBottomContainer = document.createElement("div");
+        footerBottomContainer.className = "footer-bottom-container";
+        footerBottomContainer.appendChild(socialIcons);
+        footerBottomContainer.appendChild(copyrightP);
+        footerColR.appendChild(footerBottomContainer);
+      }
+    }
+  } else if (window.innerWidth <= 1024) {
+    // TABLET: Keep desktop structure but move social icons
+
+    // Restore desktop structure if coming from mobile
+    if (document.querySelector(".footer-mobile-col-l")) {
+      // Restore original structure
+      if (
+        footerTitleL &&
+        footerTitleR &&
+        footerListL &&
+        footerListR &&
+        footerListsContainer &&
+        footerHgroup
+      ) {
+        // Show hgroup again
+        footerHgroup.style.display = "flex";
+
+        // Move titles back to hgroup
+        footerHgroup.appendChild(footerTitleL);
+        footerHgroup.appendChild(footerTitleR);
+
+        // Clear and restore lists container
+        footerListsContainer.innerHTML = "";
+        footerListsContainer.appendChild(footerListL);
+        footerListsContainer.appendChild(footerListR);
+      }
+    }
+
+    // Move existing content
+    if (header && timeContainer && toggleP) {
+      header.insertBefore(timeContainer, toggleP.nextSibling);
+    }
+
+    if (
+      imgResponsive &&
+      helpRedact &&
+      helpTextResp &&
+      helpTextResp.parentNode === helpRedact
+    ) {
+      const ref = helpTextResp.nextElementSibling || null;
+      helpRedact.insertBefore(imgResponsive, ref);
+    } else if (imgResponsive && helpRedact) {
+      helpRedact.appendChild(imgResponsive);
+    }
+
+    // Handle social icons + copyright for tablet
+    if (socialIcons && copyrightP && footerColR) {
+      let footerBottomContainer = document.querySelector(
+        ".footer-bottom-container"
+      );
+      if (!footerBottomContainer) {
+        footerBottomContainer = document.createElement("div");
+        footerBottomContainer.className = "footer-bottom-container";
+        footerBottomContainer.appendChild(socialIcons);
+        footerBottomContainer.appendChild(copyrightP);
+        footerColR.appendChild(footerBottomContainer);
+      }
+    }
   } else {
+    // DESKTOP: Restore everything to original positions
+
+    // Restore desktop structure if coming from mobile/tablet
+    if (document.querySelector(".footer-mobile-col-l")) {
+      if (
+        footerTitleL &&
+        footerTitleR &&
+        footerListL &&
+        footerListR &&
+        footerListsContainer &&
+        footerHgroup
+      ) {
+        // Show hgroup again
+        footerHgroup.style.display = "flex";
+
+        // Move titles back to hgroup
+        footerHgroup.appendChild(footerTitleL);
+        footerHgroup.appendChild(footerTitleR);
+
+        // Clear and restore lists container
+        footerListsContainer.innerHTML = "";
+        footerListsContainer.appendChild(footerListL);
+        footerListsContainer.appendChild(footerListR);
+      }
+    }
+
     if (imgResponsive && helpSection) {
       helpSection.appendChild(imgResponsive);
     }
+
     const homeGrid = document.querySelector(".home-grid");
     if (homeGrid && timeContainer) {
       homeGrid.appendChild(timeContainer);
+    }
+
+    // Move social icons back to left column and restore copyright
+    if (socialIcons && document.querySelector(".footer-col-l")) {
+      const footerColL = document.querySelector(".footer-col-l");
+      const footerBottomContainer = document.querySelector(
+        ".footer-bottom-container"
+      );
+
+      footerColL.appendChild(socialIcons);
+      if (footerBottomContainer && copyrightP && footerColR) {
+        footerColR.appendChild(copyrightP);
+        footerBottomContainer.remove();
+      }
     }
   }
 }

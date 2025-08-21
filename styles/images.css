@@ -54,6 +54,11 @@
   left: 3%;
 }
 
+.footer-location {
+  width: 20px;
+  height: 20px;
+}
+
 .help-img-desk {
   display: block;
   width: 65.625rem;
@@ -164,5 +169,10 @@
 
   .elipse-r-sm {
     display: none;
+  }
+
+  .footer-location {
+    width: 40px;
+    height: 40px;
   }
 }
